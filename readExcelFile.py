@@ -62,7 +62,7 @@ def main(file_name,colindex):
         f.write(sql_line)  # 往文件里写入sql语句
 
 if __name__ == "__main__":
-    file_name = '/Users/li/Documents/迁移数据excle模板/[新增]资产方记录.xlsx'
+    file_name = '/Users/li/Documents/迁移数据excle模板/test.xlsx'
     where = [0]  # 条件字段
     colindex = [0, 1, 2, 3, 4, 5, 6, 7]  # 列索引
     main(file_name, colindex)
