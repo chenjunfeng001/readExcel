@@ -41,7 +41,7 @@ def excel_table_bycol(file, colindex, table_name):
 
 def main(file_name,colindex):
     # colindex为需要插入的列
-    tables = excel_table_bycol(file_name, colindex, table_name=u'data')
+    tables = excel_table_bycol(file_name, colindex, table_name=u'更新data')
     t_name = tables.pop(0).decode()
     key_list = ','.join(tables.pop(0)).encode('utf8').decode()   #list转为str
     print('t_name:', t_name)
@@ -62,7 +62,7 @@ def main(file_name,colindex):
         f.write(sql_line)  # 往文件里写入sql语句
 
 if __name__ == "__main__":
-    file_name = '/Users/li/Documents/迁移数据excle模板/test.xlsx'
+    file_name = '/Users/li/Documents/迁移数据excle模板/asset_guarantee_config.xlsx'
     where = [0]  # 条件字段
-    colindex = [0, 1, 2, 3, 4, 5, 6, 7]  # 列索引
+    colindex = [ 1, 2, 3, 4]  # 列索引
     main(file_name, colindex)
