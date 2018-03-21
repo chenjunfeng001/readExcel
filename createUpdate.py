@@ -24,7 +24,7 @@ def excel_table_bycol(file, where, colindex, table_name):
     colnames = table.row_values(0)  # 获取第一行的值，作为列名称
     #print('列名称：', colnames[0])
     list = []
-    list.append('asset_guarantee_config'.encode('utf8'))
+    list.append('asset_ch_config'.encode('utf8'))
     #list.append(colnames)
     for rownum in range(1, nrows):
         row = table.row_values(rownum)
@@ -46,7 +46,7 @@ def excel_table_bycol(file, where, colindex, table_name):
 
 def main(file_name, where, colindex):
     # colindex为需要插入的列
-    tables = excel_table_bycol(file_name, where, colindex, table_name=u'更新data')
+    tables = excel_table_bycol(file_name, where, colindex, table_name='更新data')
     t_name = tables.pop(0).decode()
     #key_list = ','.join(tables.pop(0)).encode('utf8').decode()   #list转为str
     #print('t_name:', t_name)
@@ -75,7 +75,7 @@ def main(file_name, where, colindex):
             f.write(sql_line)  # 往文件里写入sql语句
 
 if __name__ == "__main__":
-    file_name = '/Users/li/Documents/迁移数据excle模板/asset_guarantee_config.xlsx'
+    file_name = '/Users/li/Documents/迁移数据excle模板/asset_ch_config.xlsx'
     where = [0]  # 条件字段
-    colindex = [1, 2, 3, 4]  # 列索引
+    colindex = [1, 2, 3, 4, 5, 6]  # 列索引
     main(file_name, where, colindex)
