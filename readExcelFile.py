@@ -19,14 +19,8 @@ def excel_table_bycol(file, colindex, table_name):
     table = data.sheet_by_name(table_name)  # 获取excel里面的某一页
     nrows = table.nrows  # 获取行数
     print('行数：', nrows)
-    t_name = table.row_values(0)[0].encode('utf8')  # 获取第一行第一列值
-    # print(t_name.decode())
-    colnames = table.row_values(0)  # 获取第一行的值，作为列名称
-    print('列名称：', colnames[0])
     list = []
-    list.append('test'.encode('utf8'))
-    list.append(colnames)
-    for rownum in range(2, nrows):
+    for rownum in range(1, nrows):
         row = table.row_values(rownum)
         if row:
             app = []
@@ -41,28 +35,19 @@ def excel_table_bycol(file, colindex, table_name):
 
 def main(file_name,colindex):
     # colindex为需要插入的列
-    tables = excel_table_bycol(file_name, colindex, table_name=u'更新data')
-    t_name = tables.pop(0).decode()
-    key_list = ','.join(tables.pop(0)).encode('utf8').decode()   #list转为str
-    print('t_name:', t_name)
-    print('key_list:', key_list)
-    sql_line = "INSERT INTO "+t_name+"（"+key_list+"）VALUE"
-    line = ''
+    tables = excel_table_bycol(file_name, colindex, table_name=u'新增data')
     print('tables:', tables)
-    for info in tables:
-        print('info:', info)
-        content = ','.join(info.pop(0).decode())
-        if line != '':
-            line = line + ',(' + content + ')'
-        else:
-            line = '('+content+')'
-    sql_line = sql_line + line + ';'
-    print(sql_line)
-    with open('./sql_result/insert#' + t_name + '.sql', 'w') as f:  # 创建sql文件，并开启写模式
-        f.write(sql_line)  # 往文件里写入sql语句
+    with open('./sql_result/update#prod_rate_config.sql', 'w') as f:  # 创建sql文件，并开启写模式
+        for info in tables:
+            print('info:', info)
+            old_key = info[1].decode()
+            new_key = info[0].decode()
+            sql_line = "UPDATE prod_rate_config SET (PRODCODE) = (SELECT PRODCODE FROM prod_rate_config WHERE serialno = '"+old_key +"') WHERE serialno = '"+new_key +"';\n"
+            print(sql_line)
+            f.write(sql_line)  # 往文件里写入sql语句
 
 if __name__ == "__main__":
-    file_name = '/Users/li/Documents/迁移数据excle模板/asset_guarantee_config.xlsx'
+    file_name = '/Users/li/Documents/迁移数据excle模板/prod_rate_config.xlsx'
     where = [0]  # 条件字段
-    colindex = [ 1, 2, 3, 4]  # 列索引
+    colindex = [0, 4]  # 列索引
     main(file_name, colindex)
