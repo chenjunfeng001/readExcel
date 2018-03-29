@@ -13,6 +13,7 @@ print(reader.line_num)
 #循环处理
 for row in reader:
     if reader.line_num == 1:
+        sql = " insert into prod_rate_config("+row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]+","+row[6]+","+row[7]+","+row[8]+","+row[9]+","+row[10]+","+row[11]+","+row[12]+","+row[13]+","+row[14]+")"
         continue
     if row[0] == '':
         print("数据:"+row[0] + " 导入信息异常")
@@ -26,8 +27,8 @@ for row in reader:
     # sql2 = "INSERT INTO account_deposit_control (USERID,ACCTROLE,USERTYPE,ACCOUNTBELONG,CARDNO,GRANTPROTOCAL,BANKLICENSENUM,entAccountContact,entAccountContactPhone,INPUTTIME) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}');\n"
     # sql2 = sql2.replace("{0}", row[0]).replace("{1}", row[2]).replace("{2}", '02').replace('{3}', row[14]).replace('{4}', row[15]).replace('{5}', row[5]).replace('{6}', row[13]).replace('{7}', row[6]).replace('{8}', row[7]).replace('{9}', time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 1)
     # 控制台输出
-    sql1 = "update prod_rate_config set PRODCODE = '"+row[1]+"', CHASSETNO = '"+row[2]+"' where SERIALNO = '"+row[0]+"';\n "
-    # sql1 = "select * from prod_rate_config WHERE  "
+    #sql1 = "update prod_rate_config set PRODCODE = '"+row[1]+"', CHASSETNO = '"+row[2]+"',TARGETACCOUNT = '"+row[14]+"' where SERIALNO = '"+row[0]+"';\n "
+    sql1 = sql + "values('"+row[0]+"','"+row[1]+"','"+row[2]+"','"+row[3]+"',"+row[4]+","+row[5]+","+row[6]+","+row[7]+","+row[8]+","+row[9]+","+row[10]+","+row[11]+","+row[12]+","+row[13]+",'"+row[14]+"');\n"
     print(sql1)
     # 写SQL文件SQL1：更新企业详情表
     fo.write(str.encode(sql1))
