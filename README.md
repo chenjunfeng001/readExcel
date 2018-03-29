@@ -1,13 +1,8 @@
 # Python3读取CSV，Excel文件生成SQL脚本
 
 # Python 文件夹遍历和文件查找
-# -*- coding: utf-8 -*-
-#to find where use the table on xxxxx xxxxxx   production env
-
-'''''
-在项目中我们元数据管理的不是很好，如果先知道一张表在哪里用过，就需要写个程序去遍历下
-'''
-
+## 代码实现
+```
 import os
 import os.path
 rootdir =   "/Users/li"#     # 指明被遍历的文件夹
@@ -33,16 +28,11 @@ def is_file_contain_word(file_,query_word):
         for line in lines:
             if query_word in line:
                 print line
-
-
-
-
 walk_all_files(rootdir,query)
 print "done"
+```
 
-
-'''''
-http://www.iplaypy.com/jichu/note.html
+```
 please explain os.walk() :
 walk()方法语法格式如下：
 os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])
@@ -55,5 +45,4 @@ os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])os.walk(top[, t
 返回值
 
 该方法没有返回值。
-
-'''
+```
