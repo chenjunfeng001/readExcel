@@ -1,0 +1,15 @@
+/target/
+.settings
+.idea
+bin
+target/
+data/
+
+.project
+.classpath
+.factorypath
+*.iml
+/.idea/workspace.xml
+.DS_Store
+pojo_result/
+venv/
