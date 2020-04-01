@@ -1,91 +1,91 @@
-drop table if exists mod.mid_l1_cal_indx
+drop table if exists mod.mid_l1_cal_indx;
 create table if not exists mod.mid_l1_cal_indx(
 batch_number varchar2(100) comment '批次号',
-secu_id varchar2(50)  comment '证券代码',
-secu_name varchar2(200)  comment '证券名称',
-open_poit number(32,16)  comment '开盘点位',
-clqn_poit number(32,16)  comment '收盘点位',
-clqn_poit_yest number(32,16)  comment '昨收盘点位',
-tnv_vol number(32,16)  comment '成交量',
-tnv_val number(32,16)  comment '成交金额',
-amp_day number(32,16)  comment '日振幅',
-yld_day number(32,16)  comment '日收益率',
-t_date number(10)    comment '计算日期',
+secu_id varchar2(50) comment '证券代码',
+secu_name varchar2(200) comment '证券名称',
+open_poit number(32,16) comment '开盘点位',
+clqn_poit number(32,16) comment '收盘点位',
+clqn_poit_yest number(32,16) comment '昨收盘点位',
+tnv_vol number(32,16) comment '成交量',
+tnv_val number(32,16) comment '成交金额',
+amp_day number(32,16) comment '日振幅',
+yld_day number(32,16) comment '日收益率',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源
 ) 
 comment '指数计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_indx_week
+drop table if exists mod.mid_l1_cal_indx_week;
 create table if not exists mod.mid_l1_cal_indx_week(
 batch_number varchar2(100) comment '批次号',
-secu_id varchar2(50)  comment '证券代码',
-secu_name varchar2(200)  comment '证券名称',
-yld_week number(32,16)  comment '周收益率',
-cald_week number(32,16)  comment '周份',
-t_date number(10)    comment '计算日期',
+secu_id varchar2(50) comment '证券代码',
+secu_name varchar2(200) comment '证券名称',
+yld_week number(32,16) comment '周收益率',
+cald_week number(32,16) comment '周份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源
 ) 
 comment '指数计算结果表_周频_盘后'
-drop table if exists mod.mid_l1_cal_indx_mth
+drop table if exists mod.mid_l1_cal_indx_mth;
 create table if not exists mod.mid_l1_cal_indx_mth(
 batch_number varchar2(100) comment '批次号',
-secu_id varchar2(50)  comment '证券代码',
-secu_name varchar2(200)  comment '证券名称',
-yld_mth number(32,16)  comment '月收益率',
-cald_mth number(32,16)  comment '月份',
-t_date number(10)    comment '计算日期',
+secu_id varchar2(50) comment '证券代码',
+secu_name varchar2(200) comment '证券名称',
+yld_mth number(32,16) comment '月收益率',
+cald_mth number(32,16) comment '月份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源
 ) 
 comment '指数计算结果表_月频_盘后'
-drop table if exists mod.mid_l1_cal_index_futr
+drop table if exists mod.mid_l1_cal_index_futr;
 create table if not exists mod.mid_l1_cal_index_futr(
 batch_number varchar2(100) comment '批次号',
-secu_id varchar2(50)  comment '证券代码',
-secu_name varchar2(200)  comment '证券名称',
-obj_indx_code varchar2(50)  comment '标的指数代码',
-obj_indx_name varchar2(200)  comment '标的指数名称',
-cont_typ varchar2(10)  comment '合约类型',
-cont_name varchar2(200)  comment '合约名称',
-sett_prc_tdy number(32,16)  comment '今日结算价',
-sett_prc_yest number(32,16)  comment '昨日结算价',
-no_covr_vol number(32,16)  comment '未平仓量',
-basis number(32,16)  comment '基差',
-ann_prm number(32,16)  comment '年化升贴水',
-tnv_vol number(32,16)  comment '成交量',
-tnv_val number(32,16)  comment '成交金额',
-obj_tnv_vol number(32,16)  comment '标的成交量',
-obj_tnv_val number(32,16)  comment '标的成交金额',
-obj_indx_clqn_prc number(32,16)  comment '标的指数收盘价',
-cont_end_dt number(10)    comment '合约到期日',
-t_date number(10)    comment '计算日期',
+secu_id varchar2(50) comment '证券代码',
+secu_name varchar2(200) comment '证券名称',
+obj_indx_code varchar2(50) comment '标的指数代码',
+obj_indx_name varchar2(200) comment '标的指数名称',
+cont_typ varchar2(10) comment '合约类型',
+cont_name varchar2(200) comment '合约名称',
+sett_prc_tdy number(32,16) comment '今日结算价',
+sett_prc_yest number(32,16) comment '昨日结算价',
+no_covr_vol number(32,16) comment '未平仓量',
+basis number(32,16) comment '基差',
+ann_prm number(32,16) comment '年化升贴水',
+tnv_vol number(32,16) comment '成交量',
+tnv_val number(32,16) comment '成交金额',
+obj_tnv_vol number(32,16) comment '标的成交量',
+obj_tnv_val number(32,16) comment '标的成交金额',
+obj_indx_clqn_prc number(32,16) comment '标的指数收盘价',
+cont_end_dt number(10) comment '合约到期日',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源
 ) 
 comment '股指期货计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_bond_curv
+drop table if exists mod.mid_l1_cal_bond_curv;
 create table if not exists mod.mid_l1_cal_bond_curv(
 batch_number varchar2(100) comment '批次号',
-secu_id varchar2(50)  comment '曲线代码',
-secu_name varchar2(200)  comment '曲线名称',
+secu_id varchar2(50) comment '曲线代码',
+secu_name varchar2(200) comment '曲线名称',
 crv_typ_code varchar2(10) comment '曲线类型代码',
 crv_typ_name varchar2(100) comment '曲线类型名称',
 pd_inval_code varchar2(10) comment '期间间隔代码',
 maty_year number(20,4) comment '期限（年）',
-yld_rat number(32,16)  comment '收益率',
-chg_bp number(32,16)  comment '变动BP',
-t_date number(10)    comment '计算日期',
+yld_rat number(32,16) comment '收益率',
+chg_bp number(32,16) comment '变动BP',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源
 ) 
 comment '利率曲线期限计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_stk_his
+drop table if exists mod.mid_l1_cal_stk_his;
 create table if not exists mod.mid_l1_cal_stk_his(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -94,9 +94,9 @@ secu_name varchar2(100) comment '证券名称',
 typ_code varchar2(20) comment '证券类别代码（大类）',
 typ_codeii varchar2(20) comment '证券类别代码（细类）',
 curr_code varchar2(5) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 open_prc number(32,16) comment '开盘价',
 clg_rw number(32,16) comment '收盘价',
 high_prc number(32,16) comment '最高价',
@@ -113,10 +113,10 @@ eps number(32,16) comment 'EPS',
 rpt_rat number(32,16) comment '股息率',
 shr_circ number(32,16) comment '流通股本',
 ttl_shr_aft number(32,16) comment '总股本',
-upd_time timestamp comment '更新时间',
+upd_time timestamp comment '更新时间
 ) 
 comment '股票市场计算结果表-历史'
-drop table if exists mod.mid_l1_cal_stk_real
+drop table if exists mod.mid_l1_cal_stk_real;
 create table if not exists mod.mid_l1_cal_stk_real(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -125,9 +125,9 @@ secu_name varchar2(100) comment '证券名称',
 typ_code varchar2(20) comment '证券类别代码（大类）',
 typ_codeii varchar2(20) comment '证券类别代码（细类）',
 curr_code varchar2(5) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 open_prc number(32,16) comment '开盘价',
 clg_rw number(32,16) comment '收盘价',
 high_prc number(32,16) comment '最高价',
@@ -144,10 +144,10 @@ eps number(32,16) comment 'EPS',
 rpt_rat number(32,16) comment '股息率',
 shr_circ number(32,16) comment '流通股本',
 ttl_shr_aft number(32,16) comment '总股本',
-upd_time timestamp comment '更新时间',
+upd_time timestamp comment '更新时间
 ) 
 comment '股票市场计算结果表-实时'
-drop table if exists mod.mid_l1_cal_stk
+drop table if exists mod.mid_l1_cal_stk;
 create table if not exists mod.mid_l1_cal_stk(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -156,9 +156,9 @@ secu_name varchar2(100) comment '证券名称',
 typ_code varchar2(20) comment '证券类别代码（大类）',
 typ_codeii varchar2(20) comment '证券类别代码（细类）',
 curr_code varchar2(5) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 open_prc number(32,16) comment '开盘价',
 clg_rw number(32,16) comment '收盘价',
 high_prc number(32,16) comment '最高价',
@@ -175,78 +175,78 @@ eps number(32,16) comment 'EPS',
 rpt_rat number(32,16) comment '股息率',
 shr_circ number(32,16) comment '流通股本',
 ttl_shr_aft number(32,16) comment '总股本',
-upd_time timestamp comment '更新时间',
+upd_time timestamp comment '更新时间
 ) 
 comment '股票市场计算结果表-盘后'
-drop table if exists mod.mid_l1_cal_basi_his
+drop table if exists mod.mid_l1_cal_basi_his;
 create table if not exists mod.mid_l1_cal_basi_his(
 batch_number varchar2(100) comment '批次号',
 basi_code varchar2(20) comment '基准代码',
 basi_name varchar2(100) comment '基准名称',
 curr_code varchar2(5) comment '基准币种',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_pont number(32,16) comment 'T日点位',
 pont_rat number(32,16) comment '点位收益率',
 t1_pont number(32,16) comment 'T-1日点位',
-elem_rat number(32,16) comment '成分收益率',
+elem_rat number(32,16) comment '成分收益率
 ) 
 comment '基准计算结果表-历史'
-drop table if exists mod.mid_l1_cal_basi
+drop table if exists mod.mid_l1_cal_basi;
 create table if not exists mod.mid_l1_cal_basi(
 batch_number varchar2(100) comment '批次号',
 basi_code varchar2(20) comment '基准代码',
 basi_name varchar2(100) comment '基准名称',
 curr_code varchar2(5) comment '基准币种',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_pont number(32,16) comment 'T日点位',
 pont_rat number(32,16) comment '点位收益率',
 t1_pont number(32,16) comment 'T-1日点位',
 valu_aprc number(32,16) comment '估值（全价）',
 t1_valu_aprc number(32,16) comment 'T-1日估值（全价）',
 elem_rat number(32,16) comment '成分收益率',
-cnbd_upd_dur_ex number(32,16)  comment '修正久期（行权）',
+cnbd_upd_dur_ex number(32,16) comment '修正久期（行权）',
 upd_dur number(32,16) comment '修正久期',
 t1_cnbd_upd_dur_ex number(32,16) comment 'T-1日修正久期（行权）',
-t1_upd_dur number(32,16) comment 'T-1日修正久期',
+t1_upd_dur number(32,16) comment 'T-1日修正久期
 ) 
 comment '基准计算结果表-盘后'
-drop table if exists mod.mid_l1_cal_basi_real
+drop table if exists mod.mid_l1_cal_basi_real;
 create table if not exists mod.mid_l1_cal_basi_real(
 batch_number varchar2(100) comment '批次号',
 basi_code varchar2(20) comment '基准代码',
 curr_code varchar2(5) comment '基准币种',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_pont number(32,16) comment 'T日点位',
 pont_rat number(32,16) comment '点位收益率',
 t1_pont number(32,16) comment 'T-1日点位',
-elem_rat number(32,16) comment '成分收益率',
+elem_rat number(32,16) comment '成分收益率
 ) 
 comment '基准计算结果表-实时'
-drop table if exists mod.mid_l1_cal_basi_week
+drop table if exists mod.mid_l1_cal_basi_week;
 create table if not exists mod.mid_l1_cal_basi_week(
 batch_number varchar2(100) comment '批次号',
 basi_code varchar2(20) comment '基准代码',
 basi_name varchar2(100) comment '基准名称',
 curr_code varchar2(5) comment '基准币种',
-cald_week number(32,16)  comment '周份',
-t_date number(10)    comment '计算日期',
+cald_week number(32,16) comment '周份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 pont_rat_week number(32,16) comment '周点位收益率',
-elem_rat_week number(32,16) comment '周成分收益率',
+elem_rat_week number(32,16) comment '周成分收益率
 ) 
 comment '基准计算结果表-周频-盘后'
-drop table if exists mod.mid_l1_cal_secu_grp
+drop table if exists mod.mid_l1_cal_secu_grp;
 create table if not exists mod.mid_l1_cal_secu_grp(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -255,7 +255,7 @@ secu_name varchar2(100) comment '证券名称',
 typ_code varchar2(20) comment '证券类别代码（大类）',
 typ_codeii varchar2(20) comment '证券类别代码（细类）',
 curr_code varchar2(5) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
 rule_typ_code varchar2(20) comment '资产规则.证券大类',
@@ -379,18 +379,18 @@ secu_column111 varchar2(100) comment '证券预留字段111',
 secu_column112 varchar2(100) comment '证券预留字段112',
 secu_column113 varchar2(100) comment '证券预留字段113',
 secu_column114 varchar2(100) comment '证券预留字段114',
-secu_column115 varchar2(100) comment '证券预留字段115',
+secu_column115 varchar2(100) comment '证券预留字段115
 ) 
 comment '资产分类计算结果表'
-drop table if exists mod.mid_l1_cal_prd_his
+drop table if exists mod.mid_l1_cal_prd_his;
 create table if not exists mod.mid_l1_cal_prd_his(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
 valu_curr_code varchar2(5) comment '估值币种',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 ttl_nav number(32,16) comment 'T日总净值',
 t_unit_nval number(32,16) comment 'T日单位净值',
 chk_coef number(32,16) comment '复权系数',
@@ -402,7 +402,7 @@ cash_out number(32,16) comment '现金流出',
 net_in number(32,16) comment '净流入',
 unit_bons_val number(32,16) comment '单位分红',
 cnv_rat number(32,16) comment '单位拆分比例',
-levg_rate number(32,16) comment '杠杆率',
+levg_rat number(32,16) comment '杠杆率',
 ttl_ast number(32,16) comment '总资产',
 repo_ast number(32,16) comment '回购资产',
 ttl_liab number(32,16) comment '总负债',
@@ -423,33 +423,35 @@ t_mval_prc number(32,16) comment 'T日市值（净价）',
 t_mval_aprc number(32,16) comment 'T日市值（全价）',
 upd_dur number(32,16) comment '修正久期',
 tdy_pl number(32,16) comment '当日盈亏',
-aggr_pl number(32,16) comment '累计盈亏',
+aggr_pl number(32,16) comment '累计盈亏
 ) 
 comment '组合计算结果表-历史'
-drop table if exists mod.mid_l1_cal_prd
+drop table if exists mod.mid_l1_cal_prd;
 create table if not exists mod.mid_l1_cal_prd(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
 prd_name varchar2(100) comment '组合名称',
 magr varchar2(50) comment '管理人',
-fund_mngr_id varchar2(50)  comment '基金经理',
+fund_mngr_id varchar2(50) comment '基金经理',
 found_dt number(10) comment '成立日期',
 valu_curr_code varchar2(5) comment '估值币种',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
+run_days_trd varchar2(20) comment '运行天数_交易日',
 ttl_shr number(32,16) comment '总份额',
 cash_in number(32,16) comment '现金流入',
 cash_out number(32,16) comment '现金流出',
 net_in number(32,16) comment '净流入',
 unit_bons_val number(32,16) comment '单位分红',
 cnv_rat number(32,16) comment '单位拆分比例',
-levg_rate number(32,16) comment '杠杆率',
-t1_levg_rate number(32,16) comment 'T-1日杠杆率',
+levg_rat number(32,16) comment '杠杆率',
+t1_levg_rat number(32,16) comment 'T-1日杠杆率',
 ttl_ast number(32,16) comment '总资产',
 t1_ttl_ast number(32,16) comment 'T-1日总资产',
 repo_ast number(32,16) comment '回购资产',
+prd_trd_assm_ast number(32,16) comment '资管产品资产',
 ttl_liab number(32,16) comment '总负债',
 marg number(32,16) comment '保证金',
 ttl_nval_rat_z number(32,16) comment '总净值收益率（0，0）',
@@ -487,23 +489,23 @@ t_real_pl number(32,16) comment 'T日已实现盈亏',
 t_ttl_pl number(32,16) comment 'T日总盈亏',
 setp_aggr_pl number(32,16) comment '成立以来_累计盈亏',
 upd_dur_prc number(32,16) comment '修正久期(净价)',
-upd_dur number(32,16) comment '修正久期（全价）',
+upd_dur_aprc number(32,16) comment '修正久期（全价）',
 upd_dur_ex_prc number(32,16) comment '行权修正久期(净价)',
 upd_dur_ex_aprc number(32,16) comment '行权修正久期（全价）',
 avl_val number(32,16) comment '可用资金',
-paid_capi number(32,16)  comment '实收资本',
-prfi_ttl number(32,16) comment '可分配利润',
+paid_capi number(32,16) comment '实收资本',
+prfi_ttl number(32,16) comment '可分配利润
 ) 
 comment '组合计算结果表-盘后'
-drop table if exists mod.mid_l1_cal_prd_real
+drop table if exists mod.mid_l1_cal_prd_real;
 create table if not exists mod.mid_l1_cal_prd_real(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
 valu_curr_code varchar2(5) comment '估值币种',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 ttl_nav number(32,16) comment 'T日总净值',
 t_unit_nval number(32,16) comment 'T日单位净值',
 chk_coef number(32,16) comment '复权系数',
@@ -515,7 +517,7 @@ cash_out number(32,16) comment '现金流出',
 net_in number(32,16) comment '净流入',
 unit_bons_val number(32,16) comment '单位分红',
 cnv_rat number(32,16) comment '单位拆分比例',
-levg_rate number(32,16) comment '杠杆率',
+levg_rat number(32,16) comment '杠杆率',
 ttl_ast number(32,16) comment '总资产',
 repo_ast number(32,16) comment '回购资产',
 ttl_liab number(32,16) comment '总负债',
@@ -536,10 +538,10 @@ t_mval_prc number(32,16) comment 'T日市值（净价）',
 t_mval_aprc number(32,16) comment 'T日市值（全价）',
 upd_dur number(32,16) comment '修正久期',
 tdy_pl number(32,16) comment '当日盈亏',
-aggr_pl number(32,16) comment '累计盈亏',
+aggr_pl number(32,16) comment '累计盈亏
 ) 
 comment '组合计算结果表-实时'
-drop table if exists mod.mid_l1_cal_prd_week
+drop table if exists mod.mid_l1_cal_prd_week;
 create table if not exists mod.mid_l1_cal_prd_week(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -547,15 +549,15 @@ prd_name varchar2(100) comment '组合名称',
 valu_curr_code varchar2(5) comment '估值币种',
 ttl_nval_rat_z_week number(32,16) comment '周总净值收益率（0，0）',
 ttl_nval_rat_o_week number(32,16) comment '周总净值收益率（1，1）',
-cald_week number(32,16)  comment '周份',
-t_date number(10)    comment '计算日期',
+cald_week number(32,16) comment '周份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-unit_nval_yld_week number(32,16) comment '周单位净值收益率',
+data_src varchar2(50) comment '数据来源',
+unit_nval_yld_week number(32,16) comment '周单位净值收益率
 ) 
 comment '组合计算结果表_周频_盘后'
-drop table if exists mod.mid_l1_cal_prd_dtl_his
+drop table if exists mod.mid_l1_cal_prd_dtl_his;
 create table if not exists mod.mid_l1_cal_prd_dtl_his(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -573,10 +575,10 @@ crse_code varchar2(20) comment '会计科目',
 crse_type varchar2(20) comment '科目大类',
 cir_id varchar2(20) comment '流通标识',
 pos_id varchar2(20) comment '多空标识',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_vol number(32,16) comment 'T日数量',
 t_cost_prc number(32,16) comment 'T日成本（净价）',
 t_cost_wght_prc number(32,16) comment 'T日成本权重（净价）',
@@ -630,15 +632,15 @@ f_savc number(32,16) comment '剩余存续期',
 futr_marg number(32,16) comment '期货保证金',
 deli_onum number(32,16) comment '清算款-待交割金额(现金比用)',
 entr_roug_amt number(32,16) comment '委托在途资金(现金比用)',
-is_prtc_f_maty_calc varchar2(5)  comment '是否参与剩余期限计算',
-is_open_cash_calc varchar2(5)  comment '是否开放式现金比计算',
-is_close_cash_calc varchar2(5)  comment '是否封闭式现金比计算',
-is_prtc_cir_lim_calc varchar2(5)  comment '是否参与流通受限计算',
-hldp_flag varchar2(20)  comment '持仓标记',
-ctrl_dir varchar2(20)  comment '控制方向',
+is_prtc_f_maty_calc varchar2(5) comment '是否参与剩余期限计算',
+is_open_cash_calc varchar2(5) comment '是否开放式现金比计算',
+is_close_cash_calc varchar2(5) comment '是否封闭式现金比计算',
+is_prtc_cir_lim_calc varchar2(5) comment '是否参与流通受限计算',
+hldp_flag varchar2(20) comment '持仓标记',
+ctrl_dir varchar2(20) comment '控制方向
 ) 
 comment '组合明细计算结果表-历史'
-drop table if exists mod.mid_l1_cal_prd_dtl
+drop table if exists mod.mid_l1_cal_prd_dtl;
 create table if not exists mod.mid_l1_cal_prd_dtl(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -658,10 +660,10 @@ crse_code varchar2(20) comment '会计科目',
 crse_type varchar2(20) comment '科目大类',
 cir_id varchar2(20) comment '流通标识',
 pos_id varchar2(20) comment '多空标识',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_vol number(32,16) comment 'T日数量',
 t_cost_prc number(32,16) comment 'T日成本（净价）',
 t_cost_wght_prc number(32,16) comment 'T日成本权重（净价）',
@@ -722,15 +724,15 @@ sell_fee number(32,16) comment '卖出费用',
 fir_conf_dt number(10) comment '首次配置日期',
 deli_onum number(32,16) comment '清算款-待交割金额(现金比用)',
 entr_roug_amt number(32,16) comment '委托在途资金(现金比用)',
-is_prtc_f_maty_calc varchar2(5)  comment '是否参与剩余期限计算',
-is_open_cash_calc varchar2(5)  comment '是否开放式现金比计算',
-is_close_cash_calc varchar2(5)  comment '是否封闭式现金比计算',
-is_prtc_cir_lim_calc varchar2(5)  comment '是否参与流通受限计算',
-hldp_flag varchar2(20)  comment '持仓标记',
-ctrl_dir varchar2(20)  comment '控制方向',
+is_prtc_f_maty_calc varchar2(5) comment '是否参与剩余期限计算',
+is_open_cash_calc varchar2(5) comment '是否开放式现金比计算',
+is_close_cash_calc varchar2(5) comment '是否封闭式现金比计算',
+is_prtc_cir_lim_calc varchar2(5) comment '是否参与流通受限计算',
+hldp_flag varchar2(20) comment '持仓标记',
+ctrl_dir varchar2(20) comment '控制方向
 ) 
 comment '组合明细计算结果表-盘后'
-drop table if exists mod.mid_l1_cal_prd_dtl_real
+drop table if exists mod.mid_l1_cal_prd_dtl_real;
 create table if not exists mod.mid_l1_cal_prd_dtl_real(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -748,10 +750,10 @@ crse_code varchar2(20) comment '会计科目',
 crse_type varchar2(20) comment '科目大类',
 cir_id varchar2(20) comment '流通标识',
 pos_id varchar2(20) comment '多空标识',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_vol number(32,16) comment 'T日数量',
 t_cost_prc number(32,16) comment 'T日成本（净价）',
 t_cost_wght_prc number(32,16) comment 'T日成本权重（净价）',
@@ -802,15 +804,15 @@ f_savc number(32,16) comment '剩余存续期',
 futr_marg number(32,16) comment '期货保证金',
 deli_onum number(32,16) comment '清算款-待交割金额(现金比用)',
 entr_roug_amt number(32,16) comment '委托在途资金(现金比用)',
-is_prtc_f_maty_calc varchar2(5)  comment '是否参与剩余期限计算',
-is_open_cash_calc varchar2(5)  comment '是否开放式现金比计算',
-is_close_cash_calc varchar2(5)  comment '是否封闭式现金比计算',
-is_prtc_cir_lim_calc varchar2(5)  comment '是否参与流通受限计算',
-hldp_flag varchar2(20)  comment '持仓标记',
-ctrl_dir varchar2(20)  comment '控制方向',
+is_prtc_f_maty_calc varchar2(5) comment '是否参与剩余期限计算',
+is_open_cash_calc varchar2(5) comment '是否开放式现金比计算',
+is_close_cash_calc varchar2(5) comment '是否封闭式现金比计算',
+is_prtc_cir_lim_calc varchar2(5) comment '是否参与流通受限计算',
+hldp_flag varchar2(20) comment '持仓标记',
+ctrl_dir varchar2(20) comment '控制方向
 ) 
 comment '组合明细计算结果表-实时'
-drop table if exists mod.mid_l1_cal_prd_dtl_inm
+drop table if exists mod.mid_l1_cal_prd_dtl_inm;
 create table if not exists mod.mid_l1_cal_prd_dtl_inm(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -828,10 +830,10 @@ crse_code varchar2(20) comment '会计科目',
 crse_type varchar2(20) comment '科目大类',
 cir_id varchar2(20) comment '流通标识',
 pos_id varchar2(20) comment '多空标识',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_vol number(32,16) comment 'T日数量',
 t_cost_prc number(32,16) comment 'T日成本（净价）',
 t_cost_wght_prc number(32,16) comment 'T日成本权重（净价）',
@@ -882,15 +884,15 @@ f_savc number(32,16) comment '剩余存续期',
 futr_marg number(32,16) comment '期货保证金',
 deli_onum number(32,16) comment '清算款-待交割金额(现金比用)',
 entr_roug_amt number(32,16) comment '委托在途资金(现金比用)',
-is_prtc_f_maty_calc varchar2(5)  comment '是否参与剩余期限计算',
-is_open_cash_calc varchar2(5)  comment '是否开放式现金比计算',
-is_close_cash_calc varchar2(5)  comment '是否封闭式现金比计算',
-is_prtc_cir_lim_calc varchar2(5)  comment '是否参与流通受限计算',
-hldp_flag varchar2(20)  comment '持仓标记',
-ctrl_dir varchar2(20)  comment '控制方向',
+is_prtc_f_maty_calc varchar2(5) comment '是否参与剩余期限计算',
+is_open_cash_calc varchar2(5) comment '是否开放式现金比计算',
+is_close_cash_calc varchar2(5) comment '是否封闭式现金比计算',
+is_prtc_cir_lim_calc varchar2(5) comment '是否参与流通受限计算',
+hldp_flag varchar2(20) comment '持仓标记',
+ctrl_dir varchar2(20) comment '控制方向
 ) 
 comment '组合明细计算结果表-在途'
-drop table if exists mod.mid_l1_cal_prd_secu_grp
+drop table if exists mod.mid_l1_cal_prd_secu_grp;
 create table if not exists mod.mid_l1_cal_prd_secu_grp(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -905,7 +907,7 @@ cir_id varchar2(20) comment '流通标识',
 pos_id varchar2(20) comment '多空标识',
 secu_curr_code varchar2(5) comment '证券币种',
 valu_curr_code varchar2(5) comment '估值币种',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
 upd_time timestamp comment '更新时间',
@@ -1029,10 +1031,10 @@ prd_column111 varchar2(100) comment '产品预留字段111',
 prd_column112 varchar2(100) comment '产品预留字段112',
 prd_column113 varchar2(100) comment '产品预留字段113',
 prd_column114 varchar2(100) comment '产品预留字段114',
-prd_column115 varchar2(100) comment '产品预留字段115',
+prd_column115 varchar2(100) comment '产品预留字段115
 ) 
 comment '组合资产分类计算结果表'
-drop table if exists mod.mid_l1_cal_prd_trd_assm_week
+drop table if exists mod.mid_l1_cal_prd_trd_assm_week;
 create table if not exists mod.mid_l1_cal_prd_trd_assm_week(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -1042,16 +1044,16 @@ typ_code varchar2(10) comment '证券类别代码（大类）',
 curr_code varchar2(10) comment '货币代码',
 rule_column1 varchar2(100) comment '资产分类规则.预留字段1',
 rule_columnn varchar2(100) comment '资产分类规则.预留字段n',
-cald_week number(32,16)  comment '周份',
-t_date number(10)    comment '计算日期',
+cald_week number(32,16) comment '周份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 unit_nval number(32,16) comment '单位净值',
-unit_nval_yld_week number(32,16) comment '周单位净值收益率',
+unit_nval_yld_week number(32,16) comment '周单位净值收益率
 ) 
 comment '资管产品计算结果表_周频_盘后'
-drop table if exists mod.mid_l1_cal_trd_rat
+drop table if exists mod.mid_l1_cal_trd_rat;
 create table if not exists mod.mid_l1_cal_trd_rat(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -1059,17 +1061,17 @@ exch_code varchar2(10) comment '交易市场代码',
 secu_name varchar2(100) comment '证券名称',
 typ_code varchar2(10) comment '证券类别代码（大类）',
 curr_code varchar2(10) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-secu_name varchar2(200)  comment '证券名称',
-open_poit number(32,16)  comment '开盘点位',
-clqn_poit number(32,16)  comment '收盘点位',
-clqn_poit_yest number(32,16)  comment '昨收盘点位',
+data_src varchar2(50) comment '数据来源',
+secu_name varchar2(200) comment '证券名称',
+open_poit number(32,16) comment '开盘点位',
+clqn_poit number(32,16) comment '收盘点位',
+clqn_poit_yest number(32,16) comment '昨收盘点位
 ) 
 comment '市场利率计算结果表'
-drop table if exists mod.mid_l1_cal_bond
+drop table if exists mod.mid_l1_cal_bond;
 create table if not exists mod.mid_l1_cal_bond(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -1077,30 +1079,30 @@ exch_code varchar2(10) comment '交易市场代码',
 secu_name varchar2(100) comment '证券名称',
 typ_code varchar2(10) comment '证券类别代码（大类）',
 curr_code varchar2(10) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-hldp_deno number(32,16)  comment '持仓面额',
-cnbd_valu_prc_ex number(32,16)  comment '中债估值净价（行权）',
-cs_valu_prc_ex number(32,16)  comment '中证估值净价（行权）',
-cnbd_valu_aror_ex number(32,16)  comment '中债估值收益率（行权）',
-clqn_prc number(32,16)  comment '收盘价(净价）',
-coup number(32,16)  comment '票面利率',
-end_dt number(10)    comment '到期日',
-put_dt number(10)    comment '回售日',
-redp_dt number(10)    comment '赎回日',
+data_src varchar2(50) comment '数据来源',
+hldp_deno number(32,16) comment '持仓面额',
+cnbd_valu_prc_ex number(32,16) comment '中债估值净价（行权）',
+cs_valu_prc_ex number(32,16) comment '中证估值净价（行权）',
+cnbd_valu_aror_ex number(32,16) comment '中债估值收益率（行权）',
+clqn_prc number(32,16) comment '收盘价(净价）',
+coup number(32,16) comment '票面利率',
+end_dt number(10) comment '到期日',
+put_dt number(10) comment '回售日',
+redp_dt number(10) comment '赎回日',
 pty_rat varchar2(10) comment '主体评级',
 debt_rat varchar2(10) comment '债项评级',
 cnbd_impl_rat varchar2(10) comment '中债隐含评级',
 scd_boar_wind varchar2(10) comment '二级板块（wind分类）',
-cnbd_upd_dur_ex number(32,16)  comment '修正久期（行权）',
-upd_dur number(32,16)  comment '修正久期',
-f_maty number(32,16)  comment '剩余期限',
-f_maty_ex number(32,16)  comment '剩余期限（行权）',
+cnbd_upd_dur_ex number(32,16) comment '修正久期（行权）',
+upd_dur number(32,16) comment '修正久期',
+f_maty number(32,16) comment '剩余期限',
+f_maty_ex number(32,16) comment '剩余期限（行权）
 ) 
 comment '债券市场计算结果表-盘后'
-drop table if exists mod.mid_l1_cal_prd_trd_assm
+drop table if exists mod.mid_l1_cal_prd_trd_assm;
 create table if not exists mod.mid_l1_cal_prd_trd_assm(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -1108,23 +1110,26 @@ exch_code varchar2(10) comment '交易市场代码',
 secu_name varchar2(100) comment '证券名称',
 typ_code varchar2(10) comment '证券类别代码（大类）',
 curr_code varchar2(10) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 unit_nval number(32,16) comment '单位净值',
-tdy_adj_unit_nval number(32,16)  comment '今日复权单位净值',
-yest_adj_unit_nval number(32,16)  comment '昨日复权单位净值',
-unit_nval_rate number(32,16)  comment '单位净值增长率',
-unit_payf number(32,16)  comment '万份收益',
-ann_yld_payf number(32,16)  comment '7日年化收益',
+chk_unit_nval_tdy number(32,16) comment '今日复权单位净值',
+chk_unit_nval_yest number(32,16) comment '昨日复权单位净值',
+unit_nval_rate number(32,16) comment '单位净值增长率',
+unit_payf number(32,16) comment '万份收益',
+ann_yld_payf number(32,16) comment '7日年化收益',
 magr varchar2(50) comment '管理人',
 found_dt number(10) comment '成立日期',
+hld_mval number(32,16) comment '持仓市值',
+ttl_nav number(32,16) comment '总净值',
+mval_rat number(32,16) comment '市值占比',
 rule_column1 varchar2(100) comment '资产分类规则.预留字段1',
-rule_columnn varchar2(100) comment '资产分类规则.预留字段n',
+rule_columnn varchar2(100) comment '资产分类规则.预留字段n
 ) 
 comment '资管产品市场计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_dpsi
+drop table if exists mod.mid_l1_cal_dpsi;
 create table if not exists mod.mid_l1_cal_dpsi(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -1135,19 +1140,19 @@ typ_code varchar2(10) comment '证券类别代码（大类）',
 typ_codei varchar2(20) comment '证券类别代码（中类）',
 typ_codeii varchar2(20) comment '证券类别代码（细类）',
 curr_code varchar2(10) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 fir_tnv_dt number(10) comment '首次成交日期',
 end_tnv_dt number(10) comment '到期成交日期',
 dpsi_typ varchar2(10) comment '存款类型',
-dpsi_rat number(32,16)  comment '存款利率',
-f_maty number(32,16)  comment '剩余期限',
-dpsi_val number(32,16) comment '存款金额',
+dpsi_rat number(32,16) comment '存款利率',
+f_maty number(32,16) comment '剩余期限',
+dpsi_val number(32,16) comment '存款金额
 ) 
 comment '存款计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_repo
+drop table if exists mod.mid_l1_cal_repo;
 create table if not exists mod.mid_l1_cal_repo(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -1158,42 +1163,42 @@ typ_code varchar2(10) comment '证券类别代码（大类）',
 typ_codei varchar2(20) comment '证券类别代码（中类）',
 typ_codeii varchar2(20) comment '证券类别代码（细类）',
 curr_code varchar2(10) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-pos_id varchar2(10)  comment '多空标志',
-repo_rat number(32,16)  comment '回购利率',
+data_src varchar2(50) comment '数据来源',
+pos_id varchar2(10) comment '多空标志',
+repo_rat number(32,16) comment '回购利率',
 tnv_val number(32,16) comment '成交金额',
-f_maty number(32,16)  comment '剩余期限',
+f_maty number(32,16) comment '剩余期限',
 trd_cntp varchar2(100) comment '交易对手',
-repo_maty number(32,16)  comment '回购期限',
+repo_maty number(32,16) comment '回购期限',
 fir_tnv_dt number(10) comment '首次成交日期',
 end_tnv_dt number(10) comment '到期成交日期',
-fir_sett_dt number(10)    comment '首次结算日',
-end_sett_dt number(10)    comment '到期结算日',
-actl_futk_days number(32,16)  comment '实际占款天数',
+fir_sett_dt number(10) comment '首次结算日',
+end_sett_dt number(10) comment '到期结算日',
+actl_futk_days number(32,16) comment '实际占款天数
 ) 
 comment '回购计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_repo_pledg
+drop table if exists mod.mid_l1_cal_repo_pledg;
 create table if not exists mod.mid_l1_cal_repo_pledg(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
 exch_code varchar2(10) comment '交易市场代码',
 typ_code varchar2(10) comment '证券类别代码（大类）',
 curr_code varchar2(10) comment '货币代码',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-cnv_rat number(32,16)  comment '折算率',
+data_src varchar2(50) comment '数据来源',
+cnv_rat number(32,16) comment '折算率',
 pledg_secu_name varchar2(200) comment '质押券证券名称',
 pledg_secu_id varchar2(50) comment '质押券证券编码',
-pledg_vol number(32,16)  comment '质押券数量',
-pledg_mval number(32,16)  comment '质押券市值',
+pledg_vol number(32,16) comment '质押券数量',
+pledg_mval number(32,16) comment '质押券市值
 ) 
 comment '回购质押券计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_prd_mth
+drop table if exists mod.mid_l1_cal_prd_mth;
 create table if not exists mod.mid_l1_cal_prd_mth(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -1201,15 +1206,15 @@ prd_name varchar2(100) comment '组合名称',
 valu_curr_code varchar2(5) comment '估值币种',
 ttl_nval_rat_z_mth number(32,16) comment '月总净值收益率（0，0）',
 ttl_nval_rat_o_mth number(32,16) comment '月总净值收益率（1，1）',
-cald_mth number(32,16)  comment '月份',
-t_date number(10)    comment '计算日期',
+cald_mth number(32,16) comment '月份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-unit_nval_yld_mth number(32,16) comment '月单位净值收益率',
+data_src varchar2(50) comment '数据来源',
+unit_nval_yld_mth number(32,16) comment '月单位净值收益率
 ) 
 comment '组合计算结果表_月频_盘后'
-drop table if exists mod.mid_l1_cal_prd_dtl_mth
+drop table if exists mod.mid_l1_cal_prd_dtl_mth;
 create table if not exists mod.mid_l1_cal_prd_dtl_mth(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -1217,15 +1222,15 @@ prd_name varchar2(100) comment '组合名称',
 valu_curr_code varchar2(5) comment '估值币种',
 ttl_nval_rat_z_mth number(32,16) comment '月总净值收益率（0，0）',
 ttl_nval_rat_o_mth number(32,16) comment '月总净值收益率（1，1）',
-cald_mth number(32,16)  comment '月份',
-t_date number(10)    comment '计算日期',
+cald_mth number(32,16) comment '月份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-unit_nval_yld_mth number(32,16) comment '月单位净值收益率',
+data_src varchar2(50) comment '数据来源',
+unit_nval_yld_mth number(32,16) comment '月单位净值收益率
 ) 
 comment '组合明细计算结果表_月频_盘后'
-drop table if exists mod.mid_l1_cal_prd_secu_grp_mth
+drop table if exists mod.mid_l1_cal_prd_secu_grp_mth;
 create table if not exists mod.mid_l1_cal_prd_secu_grp_mth(
 batch_number varchar2(100) comment '批次号',
 prd_code varchar2(32) comment '组合代码',
@@ -1233,15 +1238,15 @@ prd_name varchar2(100) comment '组合名称',
 valu_curr_code varchar2(5) comment '估值币种',
 ttl_nval_rat_z_mth number(32,16) comment '月总净值收益率（0，0）',
 ttl_nval_rat_o_mth number(32,16) comment '月总净值收益率（1，1）',
-cald_mth number(32,16)  comment '月份',
-t_date number(10)    comment '计算日期',
+cald_mth number(32,16) comment '月份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
-unit_nval_yld_mth number(32,16) comment '月单位净值收益率',
+data_src varchar2(50) comment '数据来源',
+unit_nval_yld_mth number(32,16) comment '月单位净值收益率
 ) 
 comment '组合资产分类计算结果表_月频_盘后'
-drop table if exists mod.mid_l1_cal_prd_trd_assm_mth
+drop table if exists mod.mid_l1_cal_prd_trd_assm_mth;
 create table if not exists mod.mid_l1_cal_prd_trd_assm_mth(
 batch_number varchar2(100) comment '批次号',
 secu_id varchar2(50) comment '证券编码',
@@ -1251,16 +1256,16 @@ typ_code varchar2(10) comment '证券类别代码（大类）',
 curr_code varchar2(10) comment '货币代码',
 rule_column1 varchar2(100) comment '资产分类规则.预留字段1',
 rule_columnn varchar2(100) comment '资产分类规则.预留字段n',
-cald_mth number(32,16)  comment '月份',
-t_date number(10)    comment '计算日期',
+cald_mth number(32,16) comment '月份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 unit_nval_yld_week number(32,16) comment '月单位净值收益率',
-unit_nval number(32,16) comment '单位净值',
+unit_nval number(32,16) comment '单位净值
 ) 
 comment '资管产品计算结果表_月频_盘后'
-drop table if exists mod.mid_l1_cal_basi_dtl
+drop table if exists mod.mid_l1_cal_basi_dtl;
 create table if not exists mod.mid_l1_cal_basi_dtl(
 batch_number varchar2(100) comment '批次号',
 basi_code varchar2(20) comment '基准代码',
@@ -1268,10 +1273,10 @@ basi_name varchar2(100) comment '基准名称',
 curr_code varchar2(5) comment '基准币种',
 secu_id varchar2(50) comment '证券编码',
 secu_name varchar2(100) comment '证券名称',
-t_date number(10)    comment '计算日期',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 t_elem_rat number(32,16) comment 'T日成分收益率',
 t_elem_wght number(32,16) comment 'T日成分权重',
 t1_elem_wght number(32,16) comment 'T-1日成分权重',
@@ -1279,40 +1284,40 @@ t_elem_rat_ctb_indx number(32,16) comment 'T日成分收益率贡献（指数层
   comment '成分市值（全价）',
   comment '成分数量',
   comment '成分单位市值（全价）',
-elem_valu_prc number(32,16)  comment '成分估值净价',
-elem_valu_aprc number(32,16)  comment '成分估值全价',
+elem_valu_prc number(32,16) comment '成分估值净价',
+elem_valu_aprc number(32,16) comment '成分估值全价',
 prc_rat number(32,16) comment '净价收益率',
 accr_intr number(32,16) comment '应计利息',
 t1_accr_intr number(32,16) comment 'T-1日应计利息',
 divd number(32,16) comment '派息',
-cnbd_upd_dur_ex number(32,16)  comment '修正久期(行权)',
-upd_dur number(32,16)  comment '修正久期',
+cnbd_upd_dur_ex number(32,16) comment '修正久期(行权)',
+upd_dur number(32,16) comment '修正久期
 ) 
 comment '基准明细计算结果表-盘后'
-drop table if exists mod.mid_l1_cal_curv
+drop table if exists mod.mid_l1_cal_curv;
 create table if not exists mod.mid_l1_cal_curv(
 batch_number varchar2(100) comment '批次号',
-secu_id varchar2(50)  comment '曲线代码',
-secu_name varchar2(200)  comment '曲线名称',
+secu_id varchar2(50) comment '曲线代码',
+secu_name varchar2(200) comment '曲线名称',
 crv_typ_code varchar2(10) comment '曲线类型代码',
 crv_typ_name varchar2(100) comment '曲线类型名称',
 pd_inval_code varchar2(10) comment '期间间隔代码',
 avg_rat number(32,16) comment '平均收益率',
-avg_rat_chg number(32,16) comment '平均收益率变动',
+avg_rat_chg number(32,16) comment '平均收益率变动
 ) 
 comment '利率曲线计算结果表_盘后'
-drop table if exists mod.mid_l1_cal_basi_mth
+drop table if exists mod.mid_l1_cal_basi_mth;
 create table if not exists mod.mid_l1_cal_basi_mth(
 batch_number varchar2(100) comment '批次号',
 basi_code varchar2(20) comment '基准代码',
 basi_name varchar2(100) comment '基准名称',
 curr_code varchar2(5) comment '基准币种',
-cald_mth number(32,16)  comment '月份',
-t_date number(10)    comment '计算日期',
+cald_mth number(32,16) comment '月份',
+t_date number(10) comment '计算日期',
 t_time timestamp comment '计算时间',
 upd_time timestamp comment '更新时间',
-data_src varchar2(20) comment '数据来源',
+data_src varchar2(50) comment '数据来源',
 pont_rat_mth number(32,16) comment '月点位收益率',
-elem_rat_mth number(32,16) comment '月成分收益率',
+elem_rat_mth number(32,16) comment '月成分收益率
 ) 
 comment '基准计算结果表-月频-盘后'

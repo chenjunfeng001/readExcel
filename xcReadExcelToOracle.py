@@ -64,19 +64,28 @@ def handle_excel(file, table_name, ix):
 def main(path, table_name, ix, t_header):
     tables = handle_excel(path, table_name, ix)
     # print(len(tables))
-    with open('./ddl_result/' + t_header + '_ddl.sql', 'w') as f:  # 创建sql文件，并开启写模式
+    with open('./ddl_result_oracle/' + t_header + '_ddl.sql', 'w') as f:  # 创建sql文件，并开启写模式
         for i in range(len(tables)):
             cnName = tables[i].cnName
             name = tables[i].name
-            prefix = 'drop table if exists ' + t_header + '.' + name + '\ncreate table if not exists ' + t_header + '.' + name + '('
-            f.write(prefix)
-            f.write('\n')
+            f.write('create table ' + t_header + '.' + name + '(' + '\n')
             for j in range(len(tables[i].row_list)):
-                line = tables[i].row_list[j].filed.lower() + ' ' + tables[i].row_list[j].filed_type.lower() + ' comment ' + '\'' + tables[i].row_list[j].filed_comment + '\','
+                if j == len(tables[i].row_list) - 1:
+                    line = tables[i].row_list[j].filed.lower().strip() + ' ' + tables[i].row_list[j].filed_type.lower().strip()
+                else:
+                    line = tables[i].row_list[j].filed.lower().strip() + ' ' + tables[i].row_list[j].filed_type.lower().strip() + ','
                 f.write(line)
                 f.write('\n')
-            suffix = ') \ncomment \'' + cnName + '\''
+            suffix = ');\n'
             f.write(suffix)
+
+            comment = ''  # 增加comment
+            dbName = 'cmsindicators'  # oracle数据库名称，手动赋值修改
+            commentDbName = 'comment on column ' + dbName + '.' + name + 'is ' + '\'' + cnName + '\';\n'
+            f.write(commentDbName)
+            for j in range(len(tables[i].row_list)):
+                commentCol = 'comment on column ' + name + '.' + tables[i].row_list[j].filed.lower().strip() + 'is ' + '\'' + tables[i].row_list[j].filed_comment.strip() + '\';\n'
+                f.write(commentCol)
             f.write('\n')
 
 

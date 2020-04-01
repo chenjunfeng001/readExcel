@@ -58,6 +58,6 @@ def main(path):
 
 
 if __name__ == "__main__":
-    target_path = '/Users/lichen/Documents/xunce/文档/招商基金需求/target4.xlsx'
+    target_path = '/Users/lichen/Documents/xunce/文档/target4.xlsx'
     index = 0 # 初始化列索引
     main(target_path)
